@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Car Rental Website
 #### Video Demo:  https://www.youtube.com/watch?v=paGmTNTprvI
 #### Description:
@@ -10,3 +11,7 @@ This project consists of many files such as static which stores all the static c
 Layout.html contains all the main content that will be the same throughout all the webpages connected to this site. For example, this html file contains the header which is the navigation bar that users can press to redirect to a given page, which is always fixed on the top. It also contains the footer which just contains the website name.
 Index.html is the homepage for my website. The homepage showcases a new car that we like to feature on the top of the page so it’s the first thing users see upon entering, and an option for them to rent it out. Scrolling down presents the user a redirection button to the inventory so the user is able to view the full inventory. Scrolling further down you’ll be able to see redirections to view your rentals and our contact information page.
 Inventory.html is the inventory page which showcases all the cars available. On the top of the page you see another featured car which the user is able to rent out, or if you scroll down you can see our full inventory which is made out of cards with a image of the car, and all its information alongside a button for the user to press to rent it. There also a filter button for the user to fill in their preferences and see the cars that match it.
+=======
+# Full-Stack-Car-Rental-Dealership
+A full stack car dealership website that users can use to rent cars and stores into a database.
+>>>>>>> ebe8c0b5c83dcdc33354eb60665a90a00ca8f605
