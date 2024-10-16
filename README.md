@@ -1,6 +1,5 @@
 <<<<<<< HEAD
 # Car Rental Website
-#### Video Demo:  https://www.youtube.com/watch?v=paGmTNTprvI
 #### Description:
 For my final project in CS50, I created a car rental website. This web application is designed to provide a seamless and intuitive experience for users looking to rent a car. The website offers various functionalities, including car inventory browsing, filtering based on user preferences, a detailed rental form, and a personalized rental management page.
 This project uses various technologies to ensure a smooth and efficient user experience. For the front end, I used HTML, CSS, and JavaScript. HTML was used to structure the content of the web pages, CSS was employed to style the website and make it visually appealing, and JavaScript was utilized to add interactive elements and enhance user experience. Bootstrap, a popular CSS framework, was also incorporated to make the design responsive and mobile-friendly, ensuring that the website looks great on all devices.
