@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block main %}
+<style>
+    body {
+    background-image: url('/static/images/repeatpattern.jpg');
+    background-repeat: repeat;
+    background-size: 25px;
+    position: relative;
+    min-height: 100vh; /* Ensure body takes full height of viewport */
+    margin: 0; /* Ensure no default margins */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px; /* Adjust height as needed */
+    background-image: url('/static/images/sky.jpeg');
+    background-repeat: no-repeat;
+    background-size: 1550px 400px;
+    background-position: top;
+    z-index: -1; /* Ensure it is behind the main content but above the repeat pattern */
+}
+
+   
+.thisone {
+    font-size: 128px;
+    margin-top: 100px;
+    margin-left: 10px;
+    color: white; /* Text color */
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; /* Outline color */
+        }
+    header a{
+    color: white;
+}
+
+
+</style>
+<h2 class="thisone">LETS HAVE A TALK</h2>
+
+<div class="header-container">
+    <h2 style = "text-align: left; font-size: 50px; margin-top: 90px" >Meet us</h2>
+    <h2 style = "margin-right: 40px; font-size: 50px; margin-top: 90px;">Contact us</h2>
+</div>
+<div class="header-container" style="margin-top: 10px">
+    <h2 style = "text-align: left; font-size: 20px;" >1234 Sunset Boulevard</h2>
+    <h2 style = "margin-right: 70px; font-size: 20px;">Phone: (555) 123-4567</h2>
+</div>
+<div class="header-container" style="margin-top: 0px">
+    <h2 style = "text-align: left; font-size: 20px;" >Suite 101</h2>
+    <h2 style = "font-size: 20px;">Email: contact@elitemotors.com</h2>
+</div>
+<div class="header-container" style="margin-top: 0px">
+    <h2 style = "text-align: left; font-size: 20px; margin-top: " >Sunnyville, CA 90210</h2>
+</div>
+<div class="header-container" style="margin-top: 0px">
+    <h2 style = "text-align: left; font-size: 20px; margin-bottom: 100px" >USA</h2>
+</div>
+
+
+
+
+{% endblock %}

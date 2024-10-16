@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<style>
+body {
+    background-image: url('/static/images/repeatpattern.jpg');
+    background-repeat: repeat;
+    background-size: 25px;
+    position: relative;
+    min-height: 100vh; /* Ensure body takes full height of viewport */
+    margin: 0; /* Ensure no default margins */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px; /* Adjust height as needed */
+    background-image: url('/static/images/bmw.jpeg');
+    background-repeat: no-repeat;
+    background-size: 1550px 700px;
+    background-position: top;
+    z-index: -1; /* Ensure it is behind the main content but above the repeat pattern */
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 700px; /* Position this directly below the bmw image */
+    left: 0;
+    width: 100%;
+    height: 700px; /* Adjust height as needed */
+    background-image: url('/static/images/blackcar.jpg');
+    background-repeat: no-repeat;
+    background-size: 1550px 700px;
+    background-position: top;
+    z-index: -1; /* Ensure it is behind the main content but above the repeat pattern */
+}
+
+
+</style>
+<div>
+    <h2 class="thumbnail-content" style="padding-top: 50vh">Drive the Future</h2><br>
+    <h2 class="thumbnail-content" style="font-size: 30px">New Offers on BMW Series 5 (2024)</h2><br>
+    <a href="/rent/96" class="btn btn-light">Make Reservation</a>
+</div>
+<div style="height: 700px">
+    <h2 class="thumbnail-content" style="color: white; margin-top: 390px">Experience Tranquility</h2>
+    <h2 class="thumbnail-content" style="font-size: 30px">Explore Offers</h2><br>
+    <a href="/inventory" class="btn btn-dark">Search Inventory</a>
+    <div>
+        <h2 style="color: Black; font-size: 40px; margin-top: 250px; display: inline-block; margin-right: 500px;">Find your rentals</h2>
+        <h2 style="color: Black; font-size: 40px; display: inline-block;">Contact us</h2>
+    </div>
+        <a href="/my_rentals" class="btn btn-warning" style="margin-right: 630px; margin-left: 70px; padding: 5px 15px; font-size: 30px;">My Rentals</a>
+        <a href="/contact" class="btn btn-warning" style=" padding: 5px 15px; font-size: 30px;">Contact</a>
+
+</div>
+
+{% endblock %}

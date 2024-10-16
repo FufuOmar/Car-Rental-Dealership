@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rent
+{% endblock %}
+
+{% block main %}
+<style>
+    header {
+    background-color: white;
+    }
+    body{
+        background-image: url('/static/images/lake.jpeg'), url('/static/images/repeatpattern.jpg');
+        background-position: center, center; /* Position each background */
+        background-repeat: no-repeat, repeat; /* Prevent repeating */
+        background-size: 1550px 600px, 25px; /*Size each bac */
+    }
+    body::before,
+    body::after {
+        content: "";
+        position: absolute;
+        left: 50%; /* Center align */
+        transform: translateX(-50%); /* Center align */
+        width: 1509px; /* Match the width of your background image */
+        height: 3px; /* Height of the border */
+        background-color: #863131; /* Color of the border */
+    }
+
+    body::before {
+        top: 134px; /* Position at the top */
+    }
+
+    body::after {
+        bottom: 120px; /* Position at the bottom */
+    }
+
+    .full-height {
+        height: 90vh; /* Full viewport height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+    }
+
+    .content-container {
+        background: rgba(255, 255, 255, 0.4);
+        width: 40%; /* Adjusted width for better appearance */
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        display: grid;
+        grid-gap: 20px;
+        justify-content: center; /* Center the contents */
+        align-items: center; /* Center the contents */
+        margin: 0 auto;
+    }
+
+    .input-box {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .full-width {
+        grid-column: span 2;
+    }
+
+    .submit-button {
+            grid-column: span 2;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+</style>
+<div class="full-height">
+    <h1 style="color: black">{{ car.Model }}</h1>
+    <h2 style="color: black">Make your reservation</h2>
+    <div class="content-container">
+        <form action="/rent/{{ car.Id }}" method="post" style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px;">
+        <div class="input-group">
+            <input class="input-box" type="text" name="firstName" placeholder="First Name">
+        </div>
+        <div class="input-group">
+            <input class="input-box" type="text" name="lastName" placeholder="Last Name">
+        </div>
+        <div class="input-group full-width">
+            <input class="input-box" type="email" name="email" placeholder="Email">
+        </div>
+        <div class="input-group">
+            <label for="startDate">Pick-up Date:</label>
+            <input class="input-box" type="date" name="startDate" id="startDate">
+        </div>
+        <div class="input-group">
+            <label for="returnDate">Return Date:</label>
+            <input class="input-box" type="date" name="returnDate" id="returnDate">
+        </div>
+        <div class="input-group full-width">
+            <input class="input-box" type="text" name="phone" placeholder="Phone Number">
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

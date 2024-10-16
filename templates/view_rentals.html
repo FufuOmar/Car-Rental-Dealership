@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View rental
+{% endblock %}
+
+{% block main %}
+<style>
+      body{
+        background-image: url('/static/images/beach.jpeg'), url('/static/images/repeatpattern.jpg');
+        background-position: center, center; /* Position each background */
+        background-repeat: no-repeat, repeat; /* Prevent repeating */
+        background-size: 1550px 600px, 25px; /*Size each bac */
+    }
+    body::before,
+    body::after {
+        content: "";
+        position: absolute;
+        left: 50%; /* Center align */
+        transform: translateX(-50%); /* Center align */
+        width: 1509px; /* Match the width of your background image */
+        height: 3px; /* Height of the border */
+        background-color: #863131; /* Color of the border */
+    }
+
+    body::before {
+        top: 134px; /* Position at the top */
+    }
+
+    body::after {
+        bottom: 120px; /* Position at the bottom */
+    }
+
+    .full-height {
+        height: 90vh; /* Full viewport height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+    }
+    .card {
+            width: 300px; /* Set the desired width */
+            max-width: 100%; /* Ensure it doesn't exceed the container width */
+            margin: auto; /* Center the card */
+        }
+</style>
+<div class="full-height">
+    <h2 style="margin-top: 100px">Your Rentals:</h2>
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src= {{ car.Image }} alt="car" style="width:100%">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;" >{{ car.Model }}</h5>
+                <p class="card-text" style="text-align: center;">
+                    Type: {{ car.Type }}<br>
+                    Miles: {{ car.Miles }}<br>
+                    Color: {{ car.Color }}<br>
+                    Style: {{ car.Style }}<br>
+                    Price: ${{ car.Price }}<br>
+                    Start date: {{ start_date }}<br>
+                    Return date: {{ end_date }}<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

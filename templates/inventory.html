@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Inventory
+{% endblock %}
+
+{% block main %}
+<style>
+
+    body{
+    background-image: url('/static/images/fordbronco.jpeg'), url('/static/images/repeatpattern.jpg');
+    background-position: top, center; /* Position each background */
+    background-repeat: no-repeat, repeat; /* Prevent repeating */
+    background-size: 1550px 700px, 25px; /*Size each bac */
+    }
+    header a{
+        color: white;
+    }
+</style>
+<div>
+    <h2 class="thumbnail-content" style="padding-top: 50vh">Embrace The Impossible</h2><br>
+    <h2 class="thumbnail-content" style="font-size: 30px">New Offers on 2024 Ford Bronco</h2><br>
+    <a href="/rent/97" class="btn btn-light">Rent Now</a>
+</div>
+<div class="header-container">
+    <h2 style = "text-align: left;" >Filter</h2>
+    <h2 style = "margin-right: 300px">Inventory</h2>
+</div>
+<div class="solid-container">
+    <hr class="solid" style="width:25%; color: ">
+    <hr class="solid" style="width:70%; margin-right:30px">
+</div>
+<div class="content-container">
+    <div class="left-content" style="width: 350px;">
+        <form action="/inventory" method="post">
+            <div class="mb-3">
+                <div class="color-selection">
+                    <h2>Paint</h2>
+                    <div class="color-options">
+                        <label>
+                            <input type="radio" name="color" value="Red">
+                            <span class="custom-radio red"></span>
+                            <span class="color-label">Red</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="Green">
+                            <span class="custom-radio green"></span>
+                            <span class="color-label">Green</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="Blue">
+                            <span class="custom-radio blue"></span>
+                            <span class="color-label">Blue</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="Black">
+                            <span class="custom-radio black"></span>
+                            <span class="color-label">Black</span>
+                        </label>
+                        <!-- Add more colors as needed -->
+                    </div>
+                    <div class="color-options">
+                        <label>
+                            <input type="radio" name="color" value="White">
+                            <span class="custom-radio white"></span>
+                            <span class="color-label">White</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="Silver">
+                            <span class="custom-radio silver"></span>
+                            <span class="color-label">Silver</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="Gray">
+                            <span class="custom-radio gray"></span>
+                            <span class="color-label">Gray</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="Yellow">
+                            <span class="custom-radio yellow"></span>
+                            <span class="color-label">Yellow</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <h2>Power Source:</h2>
+                <div>
+                    <input type="radio" name="style" value="Gas"> Gas
+                    <input type="radio" name="style" value="Electric"> Electric
+                </div>
+            </div>
+            <div class="mb-3">
+                <h2>Type:</h2>
+                <div>
+                    <input type="radio" name="type" value="New"> New
+                    <input type="radio" name="type" value="Used"> Used
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </form>
+    </div>
+    <div class="right-content">
+        <div class="container card-container">
+            <div class="row">
+                {% for car in cars %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src= {{ car.Image }} alt="car" style="width:100%">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ car.Model }}</h5>
+                            <p class="card-text">
+                                Type: {{ car.Type }}<br>
+                                Miles: {{ car.Miles }}<br>
+                                Color: {{ car.Color }}<br>
+                                Style: {{ car.Style }}<br>
+                                Price: ${{ car.Price }}
+                            </p>
+                            <a href="/rent/{{ car.Id }}" class="btn btn-primary">Rent</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
